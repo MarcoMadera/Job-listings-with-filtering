@@ -1,6 +1,15 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Contents from "./components/Contents";
 
-const App = () => <h1>React-Template</h1>;
+const App = () => {
+  return (
+    <Fragment>
+      <Header />
+      <Contents />
+    </Fragment>
+  );
+};
 
 export default App;

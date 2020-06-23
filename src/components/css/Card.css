@@ -1,0 +1,15 @@
+.Card{
+  display: block;
+}
+
+.card_container{
+  text-align: center;
+  height: 200px;
+  border: solid 1px black;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.card__container__logo{
+  border-radius: 50%;
+}
