@@ -15,7 +15,7 @@ export const data = [
     companyName: "Photosnap",
     logo: PhotosnapLogo,
     jobOffer: "Senior Frontend Developer",
-    dateOffer: "21/06/2020",
+    dateOffer: "1d ago",
     workTime: "Full Time",
     area: "USA only",
     skills: ["Frontend", "Senior", "HTML", "CSS", "JavaScript"],

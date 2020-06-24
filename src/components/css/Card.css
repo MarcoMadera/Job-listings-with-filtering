@@ -1,15 +1,52 @@
 .Card{
   display: block;
+  padding: 60px 0 0 0;
 }
 
-.card_container{
-  text-align: center;
-  height: 200px;
-  border: solid 1px black;
+.card__container{
   border-radius: 6px;
   background-color: white;
+  padding: 30px 20px 20px 20px;
+  margin: 0 30px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.23)
+}
+.card__container div{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .card__container__logo{
-  border-radius: 50%;
+  margin: -55px 0 0 0;
+  width: 48px;
+  display: flex;
+}
+
+.card__container__meta{
+  display: flex;
+  margin: 0 5px 0px 0px;
+}
+
+.card__container__meta span{
+  margin-right: 25px;
+}
+
+.card__container__meta__workTime{
+  display: list-item;
+}
+
+.card__container__meta__area{
+  display: list-item;
+}
+.card__container__skills{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.card__container__skills a{
+  margin: 5px 5px 5px 0;
+  padding: 7px 5px 3px 5px;
+  border-radius: 6px;
+  background: hsl(180, 52%, 96%);
+  width: fit-content;
+  cursor: pointer;
 }
