@@ -4,32 +4,27 @@ import "./css/FilterList.css";
 import Skill from "./Skill";
 
 const FilterList = (props) => {
-  console.log(props);
-  let sum = [];
-
-  function eliminateDuplicates(arr) {
-    let out = [];
-    let obj = {};
-    for (let i = 0; i < arr.length; i++) {
-      obj[arr[i]] = 0;
-    }
-    for (let i in obj) {
-      out.push(i);
-    }
-    return out;
-  }
-  const res = eliminateDuplicates(sum);
-
   return (
     <div className="FilterList">
-      <div className="filterList__container">
-        <div className="filterList__container__filter">
-          {(() => res.map((skill, i) => <Skill skill="ee" key={i} />))()}
+      {props.filters.length > 0 && (
+        <div className="filterList__container" key={props.id}>
+          <div className="filterList__container__filter">
+            {props.filters.map((skill, i) => (
+              <Skill
+                key={i}
+                skill={skill}
+                handleRemoveClick={props.handleRemoveClick}
+              />
+            ))}
+          </div>
+          <div
+            className="filterList__container__clear"
+            onClick={() => props.handleClearClick()}
+          >
+            <p>Clear</p>
+          </div>
         </div>
-        <div className="filterList__container__clear">
-          <p>Clear</p>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

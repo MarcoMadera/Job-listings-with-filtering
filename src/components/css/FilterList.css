@@ -4,8 +4,7 @@
 }
 
 .filterList__container{
-  display: grid;
-  grid-template-columns: 80% 20%;
+  display: flex;
   background: white;
   border-radius: 6px;
 }
@@ -17,5 +16,8 @@
 }
 
 .filterList__container__clear{
+  margin-left: auto;
+  margin-right: 10px;
   align-self: center;
+  cursor: pointer;
 }
