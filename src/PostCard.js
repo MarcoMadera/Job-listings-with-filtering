@@ -2,17 +2,24 @@ import React from "react";
 import Card from "./components/Card";
 
 const PostCard = (props) => {
+  console.log(props);
   return (
-    <li>
+    <li key={props.id}>
       <Card
+        key={props.id}
         id={props.id}
-        companyName={props.companyName}
+        company={props.company}
         logo={props.logo}
-        jobOffer={props.jobOffer}
-        dateOffer={props.dateOffer}
-        workTime={props.workTime}
-        area={props.area}
-        skills={props.skills}
+        new={props.isNew}
+        featured={props.featured}
+        position={props.position}
+        role={props.role}
+        level={props.level}
+        postedAt={props.postedAt}
+        contract={props.contract}
+        location={props.location}
+        languages={props.languages}
+        tools={props.tools}
       />
     </li>
   );

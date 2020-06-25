@@ -2,36 +2,39 @@ import React from "react";
 import "./css/Card.css";
 
 const Card = (props) => {
-  let handleClick = () => console.log(this);
   return (
     <div className="Card">
       <div className="card__container">
         <img src={props.logo} className="card__container__logo" />
         <div className="card__container_companyName">
-          <h5>{props.companyName}</h5>
+          <h5>{props.company}</h5>
         </div>
         <div className="card__container__jobOffer">
-          <h2>{props.jobOffer}</h2>
+          <h2>{props.position}</h2>
         </div>
         <div className="card__container__meta">
-          <span className="card__container__meta__date">{props.dateOffer}</span>
-          <span className="card__container__meta__workTime">
-            {props.workTime}
+          <span>
+            {props.postedAt} &middot; {props.contract} &middot; {props.location}
           </span>
-          <span className="card__container__meta__area">{props.area}</span>
         </div>
         <hr />
         <div className="card__container__skills">
-          {(() =>
-            props.skills.map((skills, i) => (
-              <a
-                onClick={handleClick}
-                className="card__container__skills__tags"
-                key={i}
-              >
-                {skills}
-              </a>
-            )))()}
+          {(() => (
+            <div>
+              <a className="card__container__skills__tags">{props.role}</a>
+              <a className="card__container__skills__tags">{props.level}</a>
+              {props.languages.map((languages, i) => (
+                <a className="card__container__skills__tags" key={i}>
+                  {languages}
+                </a>
+              ))}
+              {props.tools.map((tools, i) => (
+                <a className="card__container__skills__tags" key={i}>
+                  {tools}
+                </a>
+              ))}
+            </div>
+          ))()}
         </div>
       </div>
     </div>

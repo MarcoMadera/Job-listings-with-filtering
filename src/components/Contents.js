@@ -1,40 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./css/Contents.css";
-import { data } from "../data";
 import PostCard from "../postCard";
 import FilterList from "../components/FilterList";
 
 const Contents = () => {
-  const posts = data.map(
-    (
-      { id, companyName, logo, jobOffer, dateOffer, workTime, area, skills },
-      i
-    ) => (
-      <PostCard
-        key={id}
-        id={id}
-        companyName={companyName}
-        logo={logo}
-        jobOffer={jobOffer}
-        dateOffer={dateOffer}
-        workTime={workTime}
-        area={area}
-        skills={skills}
-      />
-    )
-  );
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        setData(res);
+      });
+  }, []);
+
+  const posts = data.map((data, i) => (
+    <PostCard
+      key={data.id}
+      id={data.id}
+      company={data.company}
+      logo={data.logo}
+      new={data.new}
+      featured={data.featured}
+      position={data.position}
+      role={data.role}
+      level={data.level}
+      postedAt={data.postedAt}
+      contract={data.contract}
+      location={data.location}
+      languages={data.languages}
+      tools={data.tools}
+    />
+  ));
 
   return (
     <div className="Contents">
       <div className="contents__container">
-        <div className="contents__container__filterList">
-          <FilterList />
-        </div>
-        <div className="contents__container__posts">{posts}</div>
+        {data.length === 0 ? (
+          <div className="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        ) : (
+          <div>
+            <div className="contents__container__filterList">
+              <FilterList languages={data[0].languages} tools={data.tools} />
+            </div>
+            <div className="contents__container__posts">{posts}</div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-//<FilterList key={id} id={id + i} skills={skills[i]} />;
 export default Contents;
