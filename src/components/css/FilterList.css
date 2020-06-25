@@ -20,4 +20,15 @@
   margin-right: 10px;
   align-self: center;
   cursor: pointer;
+  color: hsl(180, 29%, 50%);
+}
+
+.filterList__container__clear:hover{
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1284px){
+  .FilterList{
+    padding: 0;
+  }
 }

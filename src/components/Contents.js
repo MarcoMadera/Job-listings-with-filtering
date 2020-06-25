@@ -92,9 +92,7 @@ const Contents = () => {
                 id={data.id}
               />
             </div>
-            <div className="contents__container__posts">
-              <ul>{posts}</ul>
-            </div>
+            <ul className="contents__container__posts">{posts}</ul>
           </Fragment>
         )}
       </div>

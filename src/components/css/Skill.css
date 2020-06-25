@@ -12,8 +12,12 @@
 
 .skill__container__remove{
   margin: 5px 0px 5px 0;
-  padding: 7px 3px 3px 3px;
+  padding: 7px 7px 3px 7px;
   border-radius: 0px 6px 6px 0px;
   background: hsl(180, 12%, 50%);
   cursor: pointer;
+}
+
+.skill__container__remove:hover{
+  background: hsl(180, 14%, 20%);
 }

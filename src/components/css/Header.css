@@ -4,3 +4,9 @@
   /* background-repeat: no-repeat; */
   background-color: hsl(180, 29%, 50%);
 }
+
+@media screen and (min-width: 1281px){
+  .Header{
+    background-image: url("./../../images/bg-header-desktop.svg");
+  }
+}

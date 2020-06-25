@@ -11,40 +11,43 @@ const Card = (props) => {
     <div className="Card">
       <div className={`card__container ${topic}`}>
         <img src={props.logo} className="card__container__logo" />
-        <h5>
-          {props.company}
-          {props.new && (
-            <label className="card__container__label-new">NEW</label>
-          )}
-          {props.featured && (
-            <label className="card__container__label-feature">FEATURED</label>
-          )}
-        </h5>
-        <div className="card__container__jobOffer">
-          <h2>{props.position}</h2>
+        <div className="card__container__data">
+          <h5 className="card__container__data__title">
+            {props.company}
+            {props.new && (
+              <label className="card__container__label-new">NEW!</label>
+            )}
+            {props.featured && (
+              <label className="card__container__label-feature">FEATURED</label>
+            )}
+          </h5>
+          <div className="card__container__jobOffer">
+            <a href="#">{props.position}</a>
+          </div>
+          <div className="card__container__meta">
+            <span>
+              {props.postedAt} &middot; {props.contract} &middot;{" "}
+              {props.location}
+            </span>
+          </div>
+          <hr />
         </div>
-        <div className="card__container__meta">
-          <span>
-            {props.postedAt} &middot; {props.contract} &middot; {props.location}
-          </span>
-        </div>
-        <hr />
         <div className="card__container__skills">
           {(() => (
             <div className="card__container__skills__tags">
-              <a onClick={() => props.handleClick(props.role)}>{props.role}</a>
-              <a onClick={() => props.handleClick(props.level)}>
+              <p onClick={() => props.handleClick(props.role)}>{props.role}</p>
+              <p onClick={() => props.handleClick(props.level)}>
                 {props.level}
-              </a>
+              </p>
               {props.languages.map((languages, i) => (
-                <a onClick={() => props.handleClick(languages)} key={i}>
+                <p onClick={() => props.handleClick(languages)} key={i}>
                   {languages}
-                </a>
+                </p>
               ))}
               {props.tools.map((tools, i) => (
-                <a onClick={() => props.handleClick(tools)} key={i}>
+                <p onClick={() => props.handleClick(tools)} key={i}>
                   {tools}
-                </a>
+                </p>
               ))}
             </div>
           ))()}

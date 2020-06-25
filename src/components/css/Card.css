@@ -1,6 +1,6 @@
 .Card{
   display: block;
-  padding: 60px 0 0 0;
+  margin: 60px 0 0 0;
 }
 
 .topic{
@@ -26,19 +26,35 @@
   display: flex;
 }
 
+.card__container__data__title{
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
 .card__container__label-new, .card__container__label-feature{
   margin-left: 10px;
-  padding: 4px 8px 1px 8px;
+  padding: 7px 6px 3px 7px;
   border-radius: 50px;
   color:white;
   user-select: none;
+  font-size: 11px;
 }
 .card__container__label-new{
   background: hsl(180, 29%, 50%);
 }
 
 .card__container__label-feature{
-  background: hsl(0, 0%, 11%);
+  background: hsl(180, 14%, 20%);
+}
+
+.card__container__jobOffer a{
+  color: hsl(180, 14%, 20%);
+  text-decoration: none;
+}
+
+.card__container__jobOffer:hover a{
+  color: hsl(180, 29%, 50%);
 }
 
 .card__container__skills__tags{
@@ -60,11 +76,56 @@
   flex-wrap: wrap;
 }
 
-.card__container__skills a{
+.card__container__skills p{
   margin: 5px 5px 5px 0;
   padding: 7px 5px 3px 5px;
   border-radius: 6px;
   background: hsl(180, 52%, 96%);
   width: fit-content;
   cursor: pointer;
+  color: hsl(180, 29%, 50%);
+}
+
+.card__container__skills p:hover{
+  background: hsl(180, 29%, 50%);
+  color: white;
+}
+
+@media screen and (min-width: 1281px) {
+  .Card{
+    margin: 20px 0 0 0;
+  }
+
+  .card__container{
+    display: grid;
+    grid-template-columns: 13% 30% 57%;
+    margin: 0;
+    padding: 30px 20px 30px 20px;
+  }
+
+  hr{
+    display: none;
+  }
+
+  .card__container__logo{
+    margin: 0;
+    width: 80px;
+    justify-self: center;
+  }
+
+  .card__container__data{
+    align-self:center;
+  }
+
+  .card__container__skills__tags p{
+    height: fit-content;
+  }
+
+  .card__container__skills__tags p{
+    align-self: center;
+  }
+
+  .card__container__skills{
+    justify-self: right;
+  }
 }
