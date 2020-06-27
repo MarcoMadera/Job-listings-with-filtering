@@ -30,7 +30,7 @@ const Contents = () => {
       tags.push(...languages);
     }
 
-    return tags.some((tag) => filters.includes(tag));
+    return filters.every((filter) => tags.includes(filter));
   };
 
   const handleRemoveClick = (tag) => {

@@ -1,14 +1,15 @@
 {
-  "name": "react-template",
+  "name": "job-listings-with-filtering",
   "version": "0.1.0",
-  "description": "React Template",
+  "description": "Filter by tags",
   "main": "src/index.js",
   "keywords": [
     "react",
-    "webpack"
+    "webpack",
+    "filter"
   ],
   "author": "Marco Madera <marcomaderaa@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
